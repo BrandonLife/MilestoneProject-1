@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: gray;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  flex-basis: 100%;
+  text-align: center;
+  position: absolute;
+  top: 200px;
+  font-size: 1.5em;
+  padding-left: 43%;
+}
+
+#cityImage {
+  width: 100%;
+  height: 120%;
+  z-index: 1;
+}
+#character {
+  position: absolute;
+  z-index: 2;
+  top: 785px;
+  width: 4.5%;
+}
+
+.play {
+  position: absolute;
+  top: 300px;
+  padding-left: 45%;
+}
+#playBtn {
+  font-size: 60px;
+  border-radius: 1.5em;
+  background-color: antiquewhite;
+  padding: 10px 10px;
+}
+
+.gifts {
+  position: absolute;
+  width: 50px; /* Adjust the item size */
+  height: 50px; /* Adjust the item size */
+  background-image: url("../img/—Pngtree—christmas\ gift\ 2d\ red\ box_5674129.png");
+  background-size: cover;
+}
+
+#score-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#score {
+  font-size: 50px;
+}
+#winner {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+#winnerH1 {
+  font-size: 50px;
+}
