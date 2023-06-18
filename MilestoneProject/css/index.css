@@ -23,7 +23,7 @@ body {
   flex-basis: 100%;
   text-align: center;
   position: absolute;
-  top: 200px;
+  top: 230px;
   font-size: 1.5em;
   padding-left: 43%;
 }
@@ -63,16 +63,24 @@ body {
 #score-container {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 47.5%;
 }
 #score {
   font-size: 50px;
 }
 #winner {
   position: absolute;
-  top: 40%;
-  left: 40%;
+  top: 30%;
+  left: 45%;
 }
 #winnerH1 {
   font-size: 50px;
+}
+p {
+  position: absolute;
+  top: 50%;
+  left: 26%;
+  color: black;
+  font-size: large;
+  background-color: aqua;
 }
