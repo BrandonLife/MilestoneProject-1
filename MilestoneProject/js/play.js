@@ -1,6 +1,7 @@
 console.log("Can you see this");
 console.log("Before Import");
 import { fallingItems } from "./fallingItems.js";
+import { timer } from "./timer.js";
 import { walkAnimation } from "./walkAnimation.js";
 
 console.log("After Import");
@@ -21,6 +22,8 @@ function play() {
   });
   playButton.addEventListener("click", (e) => {
     e.preventDefault();
+    timer(80);
+    fallingItems();
     let title = document.getElementById("titleId");
     let text = document.getElementById("text");
     let x = 0;
@@ -31,7 +34,6 @@ function play() {
     title.style.display = "none";
     playButton.style.display = "none";
     text.style.display = "none";
-    fallingItems();
 
     let barrierLeft = 1;
     let barrierRight = 1780;

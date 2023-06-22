@@ -1,0 +1,99 @@
+export function timer(duration) {
+  let timerElement = document.createElement("p");
+
+  let totalSeconds = duration;
+  let minutes = 0;
+  let seconds = 0;
+
+  let countdownClock = setInterval(() => {
+    minutes = parseInt(totalSeconds / 60);
+    seconds = parseInt(totalSeconds % 60);
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    } else {
+      seconds = seconds;
+    }
+    if (--totalSeconds < 0) {
+      clearInterval(countdownClock);
+    }
+    timerElement.textContent = `${minutes}:${seconds}`;
+    timerElement.style.position = "absolute";
+    timerElement.style.top = 10 + "%";
+    timerElement.style.left = 45 + "%";
+    timerElement.style.fontSize = 80 + "px";
+    document.body.append(timerElement);
+  }, 1000);
+
+  // if (score >= 14) {
+  //   //you win
+  //   let winner = document.getElementById("winnerH1");
+  //   winner.textContent = "You Win! Congratulations";
+  //   clearInterval(itemInterval);
+  // } else {
+  //   let winner = document.getElementById("winnerH1");
+  //   let score = document.getElementById("score");
+  //   score.style.display = "none";
+  //   winner.textContent = "You lose. Sorry Try again";
+  //   clearInterval(itemInterval);
+  // }
+}
+
+// You can create a countdown timer in JavaScript that follows the format "MM:SS" by using the setInterval function to update the timer every second. Here's an example implementation:
+
+// javascript
+// Copy code
+// function startCountdown(duration) {
+//   let timer = duration;
+//   let minutes, seconds;
+
+//   let countdownInterval = setInterval(function () {
+//     minutes = parseInt(timer / 60, 10);
+//     seconds = parseInt(timer % 60, 10);
+
+//     minutes = minutes < 10 ? "0" + minutes : minutes;
+//     seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//     // Display the time in the format "MM:SS"
+//     console.log(minutes + ":" + seconds);
+
+//     if (--timer < 0) {
+//       clearInterval(countdownInterval);
+//       console.log("Countdown finished!");
+//     }
+//   }, 1000);
+// }
+
+// // Usage:
+// startCountdown(120); // Starts a countdown for 2 minutes (120 seconds)
+// In this example, the startCountdown function takes a duration in seconds and initializes a timer with that value. Inside the setInterval function, the timer is decremented by 1 every second (--timer). The minutes and seconds are calculated using integer division (parseInt(timer / 60, 10)) and modulus (parseInt(timer % 60, 10)).
+
+// The minutes and seconds are then formatted with leading zeros if necessary (minutes < 10 ? "0" + minutes : minutes) and (seconds < 10 ? "0" + seconds : seconds), and then displayed in the console or you can modify it to update the HTML on your webpage.
+
+// The countdown stops when the timer reaches 0, and the clearInterval function is called to stop the interval from running.
+// function startCountdown(duration) {
+//   let timer = duration;
+//   let minutes, seconds;
+
+//   let countdownInterval = setInterval(function () {
+//     minutes = parseInt(timer / 60, 10);
+//     seconds = parseInt(timer % 60, 10);
+
+//     minutes = minutes < 10 ? "0" + minutes : minutes;
+//     seconds = seconds < 10 ? "0" + seconds : seconds;
+
+//     // Display the time in the format "MM:SS"
+//     console.log(minutes + ":" + seconds);
+
+//     if (--timer < 0) {
+//       clearInterval(countdownInterval);
+//       console.log("Countdown finished!");
+//     }
+//   }, 1000);
+// }
+
+// // Usage:
+// startCountdown(120); // Starts a countdown for 2 minutes (120 seconds)

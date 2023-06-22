@@ -51,7 +51,7 @@ export function fallingItems() {
               winner.textContent = "You lose. Sorry Try again";
               clearInterval(itemInterval);
             }
-          }, 60000);
+          }, 80000);
           gifts.remove();
           clearInterval(itemInterval);
           activeItems = activeItems.filter(
@@ -73,7 +73,6 @@ export function fallingItems() {
     function startGame() {
       setInterval(createItem, 8000); // Adjust the interval duration to control the item generation rate
     }
-
     startGame();
   }
   createItem();
