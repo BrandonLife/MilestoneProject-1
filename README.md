@@ -5,13 +5,15 @@
 	Resources:
 	Youtube and ChatGPT
 	 ChatGPT helped with 70% of fallingItems.js
+  	 ChatGPT helped with some of timer.js
 	 Youtube gave me the inspiration for the santa game
-
+  	 Images came from craftpix.com
+   
 	Controls:
 	Use A to move left
 
 	Use D to move right
 
-Objective:
+	Objective:
 
-The Goal is to catch as many presents as you can within a minute and 20 seconds. If you fail to catch 14 presents before the time is up then you lose. 
+	The Goal is to catch as many presents as you can within a minute and 20 seconds. If you fail to catch 14 presents before the time is up then you lose. 
