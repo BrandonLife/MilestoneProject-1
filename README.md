@@ -4,8 +4,8 @@
 
 	Resources:
 	Youtube and ChatGPT
- ChatGPT helped with 70% of fallingItems.js
- Youtube gave me the inspiration for the santa game
+	 ChatGPT helped with 70% of fallingItems.js
+	 Youtube gave me the inspiration for the santa game
 
 	Controls:
 	Use A to move left
