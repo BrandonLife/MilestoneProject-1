@@ -1,6 +1,8 @@
 console.log("Can you see this");
 console.log("Before Import");
 import { fallingItems } from "./fallingItems.js";
+import { mouseout } from "./mouseout.js";
+import { mouseover } from "./mouseover.js";
 import { timer } from "./timer.js";
 import { walkAnimation } from "./walkAnimation.js";
 
@@ -8,16 +10,8 @@ console.log("After Import");
 function play() {
   let playButton = document.getElementById("playBtn"); //these individual event listenters are mine
   let player = document.getElementById("character");
-  playButton.addEventListener("mouseover", (e) => {
-    e.preventDefault();
-    playButton.style.backgroundColor = "green";
-    playButton.style.fontSize = "70px";
-  });
-  playButton.addEventListener("mouseout", (e) => {
-    e.preventDefault();
-    playButton.style.backgroundColor = "antiquewhite";
-    playButton.style.fontSize = "60px";
-  });
+  mouseover();
+  mouseout();
   playButton.addEventListener("click", (e) => {
     e.preventDefault();
     timer(80);
