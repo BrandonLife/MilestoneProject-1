@@ -12,13 +12,11 @@ function play() {
     e.preventDefault();
     playButton.style.backgroundColor = "green";
     playButton.style.fontSize = "70px";
-    console.log("Playbutton mouseover");
   });
   playButton.addEventListener("mouseout", (e) => {
     e.preventDefault();
     playButton.style.backgroundColor = "antiquewhite";
     playButton.style.fontSize = "60px";
-    console.log("Playbutton on mouseout");
   });
   playButton.addEventListener("click", (e) => {
     e.preventDefault();
