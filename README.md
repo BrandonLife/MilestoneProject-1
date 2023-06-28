@@ -4,8 +4,6 @@
     You can play this game at https://blmilestoneproject1.com/ or at https://brandonlife.github.io/MilestoneProject-1/
 
     Resources:
-    Youtube and ChatGPT
-     ChatGPT helped with 70% of fallingItems.js
 
 ChatGPT helped with some of timer.js
 Youtube gave me the inspiration for the santa game
@@ -18,4 +16,4 @@ Images came from craftpix.com
 
     Objective:
 
-    The Goal is to catch as many presents as you can within a minute and 20 seconds. If you fail to catch 14 presents before the time is up then you lose.
+    The Goal is to answer as many questions correctly before the time ends. if you get 10 or more questions right you win. If not you lose.
