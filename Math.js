@@ -1,31 +1,10 @@
-let questions = [
-  "What is 10 +10",
-  "What is 100/5",
-  "What is 10x4",
-  "What is 2x2",
-  "What is 3x5",
-  "What is 6+17",
-  "What is 4+6",
-  "What is 20-20",
-  "What is 3-2",
-  "What is 7+7",
-  "What is 20/4",
-  "What is 4+5",
-  "What is 6*6",
-  "What is 1x1",
-  "What is 4x4",
-  "What is 5-4",
-  "What is 4-1",
-  "What is 9*9",
-  "What is 12-7",
-  "What is 8+5+3",
-];
-
 export function math() {
+  let operands = ["+", "-", "/", "x"];
   let questionBox = document.createElement("div");
   let answerInput = document.createElement("input");
   let generateProblemBtn = document.createElement("button");
-  let userAnswer, predefinedAnswer;
+  let userAnswer, correctAnswer;
+
   userAnswer = answerInput.value;
   generateProblemBtn.textContent = "Generate problem";
   generateProblemBtn.style.position = "absolute";
@@ -37,57 +16,36 @@ export function math() {
   let score = 0;
   generateProblemBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    let questionRandomizer = Math.floor(Math.random() * 20) + 0;
-    questionBox.textContent = questions[questionRandomizer];
-    console.log(questionBox.textContent);
-    if (questionRandomizer === 0) {
-      predefinedAnswer = 20;
-    } else if (questionRandomizer === 1) {
-      predefinedAnswer = 20;
-    } else if (questionRandomizer === 2) {
-      predefinedAnswer = 40;
-    } else if (questionRandomizer === 3) {
-      predefinedAnswer = 4;
-    } else if (questionRandomizer === 4) {
-      predefinedAnswer = 15;
-    } else if (questionRandomizer === 5) {
-      predefinedAnswer = 23;
-    } else if (questionRandomizer === 6) {
-      predefinedAnswer = 10;
-    } else if (questionRandomizer === 7) {
-      predefinedAnswer = 0;
-    } else if (questionRandomizer === 8) {
-      predefinedAnswer = 1;
-    } else if (questionRandomizer === 9) {
-      predefinedAnswer = 14;
-    } else if (questionRandomizer === 10) {
-      predefinedAnswer = 5;
-    } else if (questionRandomizer === 11) {
-      predefinedAnswer = 9;
-    } else if (questionRandomizer === 12) {
-      predefinedAnswer = 36;
-    } else if (questionRandomizer === 13) {
-      predefinedAnswer = 1;
-    } else if (questionRandomizer === 14) {
-      predefinedAnswer = 16;
-    } else if (questionRandomizer === 15) {
-      predefinedAnswer = 1;
-    } else if (questionRandomizer === 16) {
-      predefinedAnswer = 3;
-    } else if (questionRandomizer === 17) {
-      predefinedAnswer = 81;
-    } else if (questionRandomizer === 18) {
-      predefinedAnswer = 20;
-    } else if (questionRandomizer === 19) {
-      predefinedAnswer = 5;
-    } else if (questionRandomizer === 20) {
-      predefinedAnswer = 16;
+    generateProblemBtn.style.display = "none";
+    let submitButton = document.createElement("button");
+    submitButton.style.position = "absolute";
+    submitButton.style.top = 40 + "%";
+    submitButton.style.left = 47.5 + "%";
+    submitButton.style.zIndex = 2;
+    submitButton.textContent = "Submit Answer";
+    document.body.append(submitButton);
+    let randomNum1 = Math.floor(Math.random() * 11);
+    let randomNum2 = Math.floor(Math.random() * 11);
+    let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
+    let operandSymbol = operands[randomOperandGeneration];
+
+    if (operandSymbol === "+") {
+      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      correctAnswer = randomNum1 + randomNum2;
+    } else if (operandSymbol === "-") {
+      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      correctAnswer = randomNum1 - randomNum2;
+    } else if (operandSymbol === "x") {
+      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      correctAnswer = randomNum1 * randomNum2;
+    } else if (operandSymbol === "/") {
+      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      correctAnswer = randomNum1 / randomNum2;
     }
+
     userAnswer = Number(userAnswer);
-    console.log(userAnswer, predefinedAnswer);
-    if (userAnswer === predefinedAnswer) {
-      score++;
-    }
+    console.log(userAnswer, correctAnswer);
+
     questionBox.style.position = "absolute";
     questionBox.style.top = 30 + "%";
     questionBox.style.left = 45 + "%";
@@ -100,7 +58,10 @@ export function math() {
     answerInput.style.width = 10 + "%";
     document.body.append(questionBox);
     document.body.append(answerInput);
-
+    if (userAnswer === correctAnswer) {
+      score++;
+      console.log(score);
+    }
     setTimeout(() => {
       if (score >= 10) {
         result.textContent = "You Win. You are a math wizard.";
