@@ -2,85 +2,40 @@
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: gray;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
-.container {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.title {
-  flex-basis: 100%;
-  text-align: center;
+#titleId {
   position: absolute;
-  top: 230px;
-  font-size: 1.5em;
-  padding-left: 43%;
+  top: 36%;
+  left: 43%;
+  z-index: 2;
+  font-size: 2.5em;
 }
-
-#cityImage {
+#main {
+  position: relative;
+  line-height: 0%;
+}
+#main #cityImage {
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 120%;
   z-index: 1;
 }
-#character {
+#santa {
   position: absolute;
+  left: 0px;
+  top: 720px;
   z-index: 2;
-  top: 785px;
   width: 4.5%;
 }
 
-.play {
-  position: absolute;
-  top: 300px;
-  padding-left: 45%;
-}
 #playBtn {
+  position: absolute;
+  top: 45%;
+  left: 45%;
   font-size: 60px;
+  z-index: 2;
   border-radius: 1.5em;
   background-color: antiquewhite;
   padding: 10px 10px;
-}
-
-.gifts {
-  position: absolute;
-  width: 50px; /* Adjust the item size */
-  height: 50px; /* Adjust the item size */
-  background-image: url("./—Pngtree—christmas\ gift\ 2d\ red\ box_5674129.png");
-  background-size: cover;
-}
-
-#score-container {
-  position: absolute;
-  top: 50%;
-  left: 47.5%;
-}
-#score {
-  font-size: 50px;
-}
-#winner {
-  position: absolute;
-  top: 30%;
-  left: 45%;
-}
-#winnerH1 {
-  font-size: 50px;
-}
-p {
-  position: absolute;
-  top: 50%;
-  left: 26%;
-  color: black;
-  font-size: larger;
-  background-color: aqua;
 }

@@ -25,21 +25,9 @@ export function timer(duration) {
     timerElement.style.top = 10 + "%";
     timerElement.style.left = 45 + "%";
     timerElement.style.fontSize = 80 + "px";
+    timerElement.style.zIndex = 2;
     document.body.append(timerElement);
   }, 1000);
-
-  // if (score >= 14) {
-  //   //you win
-  //   let winner = document.getElementById("winnerH1");
-  //   winner.textContent = "You Win! Congratulations";
-  //   clearInterval(itemInterval);
-  // } else {
-  //   let winner = document.getElementById("winnerH1");
-  //   let score = document.getElementById("score");
-  //   score.style.display = "none";
-  //   winner.textContent = "You lose. Sorry Try again";
-  //   clearInterval(itemInterval);
-  // }
 }
 
 // You can create a countdown timer in JavaScript that follows the format "MM:SS" by using the setInterval function to update the timer every second. Here's an example implementation:

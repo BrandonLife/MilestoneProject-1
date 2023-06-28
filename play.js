@@ -1,6 +1,6 @@
 console.log("Can you see this");
 console.log("Before Import");
-import { fallingItems } from "./fallingItems.js";
+import { math } from "./Math.js";
 import { mouseout } from "./mouseout.js";
 import { mouseover } from "./mouseover.js";
 import { timer } from "./timer.js";
@@ -9,23 +9,21 @@ import { walkAnimation } from "./walkAnimation.js";
 console.log("After Import");
 function play() {
   let playButton = document.getElementById("playBtn"); //these individual event listenters are mine
-  let player = document.getElementById("character");
+  let player = document.getElementById("santa");
   mouseover();
   mouseout();
   playButton.addEventListener("click", (e) => {
     e.preventDefault();
+    math();
     timer(80);
-    fallingItems();
     let title = document.getElementById("titleId");
-    let text = document.getElementById("text");
-    let x = 0;
-    let y = 785;
+    let horizontalPlacement = 0;
+    let verticalPlacement = 720;
     let playerSpeed = 10;
 
     let keystroke = 0;
     title.style.display = "none";
     playButton.style.display = "none";
-    text.style.display = "none";
 
     let barrierLeft = 1;
     let barrierRight = 1780;
@@ -41,28 +39,27 @@ function play() {
       //WalkAnimation
 
       console.log(key, "letter keys pressed");
-
-      if (key === "a") {
-        x -= playerSpeed;
-        walkAnimation(keystroke);
-      } else if (key === "d") {
-        x += playerSpeed;
-        walkAnimation(keystroke);
-      }
-
       if (keystroke >= 19) {
         keystroke = 0;
       } else {
         keystroke++;
       }
-      ///Check for a barrier on the left and right hand screens
-      if (x < barrierLeft) {
-        x = 0;
-      } else if (x >= barrierRight) {
-        x = 1780;
+      if (key === "a") {
+        horizontalPlacement -= playerSpeed;
+        walkAnimation(keystroke);
+      } else if (key === "d") {
+        horizontalPlacement += playerSpeed;
+        walkAnimation(keystroke);
       }
-      player.style.left = x + "px";
-      player.style.top = y + "px";
+
+      ///Check for a barrier on the left and right hand screens
+      if (horizontalPlacement < barrierLeft) {
+        horizontalPlacement = 0;
+      } else if (horizontalPlacement >= barrierRight) {
+        horizontalPlacement = 1780;
+      }
+      player.style.left = horizontalPlacement + "px";
+      player.style.top = verticalPlacement + "px";
     });
     document.addEventListener("keyup", function (event) {
       if (event.key === "ArrowRight") {

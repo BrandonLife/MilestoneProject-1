@@ -21,7 +21,7 @@ export function walkAnimation(keyStrokeCount) {
     "./png_santa_2_Walk_018.png",
     "./png_santa_2_Walk_019.png",
   ];
-  let player = document.getElementById("character");
+  let player = document.getElementById("santa");
   console.log("Keystroke count", keyStrokeCount);
 
   // console.log(counter, "counter");
