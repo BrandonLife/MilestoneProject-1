@@ -63,7 +63,7 @@ export function math() {
         result.textContent = "You Win. You are a math wizard.";
         result.style.position = "absolute";
         result.style.top = 30 + "%";
-        result.style.left = 47.5 + "%";
+        result.style.left = 46 + "%";
         result.style.zIndex = 2;
         questionBox.style.display = "none";
         answerInput.style.display = "none";
