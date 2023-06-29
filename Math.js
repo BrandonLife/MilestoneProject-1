@@ -4,20 +4,20 @@ export function math() {
   let answerInput = document.createElement("input");
   answerInput.setAttribute("id", "userInput");
   let generateProblemBtn = document.createElement("button");
-
+  let score = 0;
   let question;
 
   generateProblemBtn.textContent = "Generate Problem/Submit";
   generateProblemBtn.style.position = "absolute";
-  generateProblemBtn.style.top = 40 + "%";
-  generateProblemBtn.style.left = 47.5 + "%";
+  generateProblemBtn.style.top = 37 + "%";
+  generateProblemBtn.style.left = 46 + "%";
   generateProblemBtn.style.zIndex = 2;
   document.body.append(generateProblemBtn);
   let result = document.createElement("div");
 
   generateProblemBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    let score = 0;
+
     let randomNum1 = Math.floor(Math.random() * 11);
     let randomNum2 = Math.floor(Math.random() * 11);
     let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
@@ -57,10 +57,7 @@ export function math() {
     answerInput.style.width = 10 + "%";
     document.body.append(answerInput);
     document.body.append(questionBox);
-
-    if (userAnswer === correctAnswer) {
-      score++;
-    }
+    console.log(score);
     setTimeout(() => {
       if (score >= 1) {
         result.textContent = "You Win. You are a math wizard.";
