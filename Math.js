@@ -4,8 +4,9 @@ export function math() {
   let answerInput = document.createElement("input");
   answerInput.setAttribute("id", "userInput");
   let generateProblemBtn = document.createElement("button");
-  let correctAnswer;
-  let userAnswer = Number(answerInput.value);
+
+  let question;
+
   generateProblemBtn.textContent = "Generate Problem/Submit";
   generateProblemBtn.style.position = "absolute";
   generateProblemBtn.style.top = 40 + "%";
@@ -13,31 +14,37 @@ export function math() {
   generateProblemBtn.style.zIndex = 2;
   document.body.append(generateProblemBtn);
   let result = document.createElement("div");
-  let score = 0;
-  console.log(userAnswer);
+
   generateProblemBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
+    let score = 0;
     let randomNum1 = Math.floor(Math.random() * 11);
     let randomNum2 = Math.floor(Math.random() * 11);
     let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
     let operandSymbol = operands[randomOperandGeneration];
-
+    let userAnswer = Number(answerInput.value);
+    let correctAnswer = 0;
+    if (userAnswer === correctAnswer) {
+      score++;
+    }
     if (operandSymbol === "+") {
-      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 + randomNum2;
     } else if (operandSymbol === "-") {
-      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 - randomNum2;
     } else if (operandSymbol === "x") {
-      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 * randomNum2;
     } else if (operandSymbol === "/") {
-      questionBox.textContent = `What is ${randomNum1}${operandSymbol}${randomNum2}`;
+      if (randomNum1 < randomNum2) {
+        randomNum2 = randomNum1;
+      }
+      question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 / randomNum2;
     }
-    console.log(userAnswer, correctAnswer);
 
+    questionBox.textContent = question;
     questionBox.style.position = "absolute";
     questionBox.style.top = 30 + "%";
     questionBox.style.left = 45 + "%";
@@ -48,15 +55,14 @@ export function math() {
     answerInput.style.left = 45 + "%";
     answerInput.style.zIndex = 2;
     answerInput.style.width = 10 + "%";
-    document.body.append(questionBox);
     document.body.append(answerInput);
+    document.body.append(questionBox);
 
     if (userAnswer === correctAnswer) {
       score++;
-      console.log(score);
     }
     setTimeout(() => {
-      if (score >= 10) {
+      if (score >= 1) {
         result.textContent = "You Win. You are a math wizard.";
         result.style.position = "absolute";
         result.style.top = 30 + "%";
