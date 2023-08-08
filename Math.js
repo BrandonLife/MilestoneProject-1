@@ -17,7 +17,7 @@ export function math() {
   let correctAnswer=0
   generateProblemBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
+    let scoreBox = document.createElement('div')
     let randomNum1 = Math.floor(Math.random() * 11);
     let randomNum2 = Math.floor(Math.random() * 11);
     let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
@@ -53,13 +53,22 @@ export function math() {
     questionBox.style.left = 45 + "%";
     questionBox.style.zIndex = 2;
     questionBox.style.fontSize = 40 + "px";
+
     answerInput.style.position = "absolute";
     answerInput.style.top = 35 + "%";
     answerInput.style.left = 45 + "%";
     answerInput.style.zIndex = 2;
     answerInput.style.width = 10 + "%";
+
+    scoreBox.textContent = score;
+    scoreBox.style.position = "absolute";
+    scoreBox.style.top = 60 + "%";
+    scoreBox.style.left = 46 + "%";
+    scoreBox.style.zIndex = 3;
+    scoreBox.style.fontSize = 200 + "px"
     document.body.append(answerInput);
     document.body.append(questionBox);
+    document.body.append(scoreBox)
     console.log(score);
     setTimeout(() => {
       if (score >= 10) {
@@ -82,5 +91,6 @@ export function math() {
         document.body.append(result);
       }
     }, 80000);
+    
   });
 }
