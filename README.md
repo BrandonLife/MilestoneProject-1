@@ -6,13 +6,7 @@
     Resources:
 
 ChatGPT helped with some of timer.js
-Youtube gave me the inspiration for the santa game
 Images came from craftpix.com
-
-    Controls:
-    Use A to move left
-
-    Use D to move right
 
     Objective:
 

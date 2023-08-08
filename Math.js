@@ -14,7 +14,7 @@ export function math() {
   generateProblemBtn.style.zIndex = 2;
   document.body.append(generateProblemBtn);
   let result = document.createElement("div");
-
+  let correctAnswer=0
   generateProblemBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -23,7 +23,7 @@ export function math() {
     let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
     let operandSymbol = operands[randomOperandGeneration];
     let userAnswer = Number(answerInput.value);
-    let correctAnswer = 0;
+    
     if (userAnswer === correctAnswer) {
       score++;
     }
