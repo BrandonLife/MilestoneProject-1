@@ -40,6 +40,9 @@ export function math() {
       if (randomNum1 < randomNum2) {
         randomNum2 = randomNum1;
       }
+      if(randomNum2 === 0){
+        randomNum2= Math.floor(Math.random() * 11);
+      }
       question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 / randomNum2;
     }
@@ -59,7 +62,7 @@ export function math() {
     document.body.append(questionBox);
     console.log(score);
     setTimeout(() => {
-      if (score >= 1) {
+      if (score >= 10) {
         result.textContent = "You Win. You are a math wizard.";
         result.style.position = "absolute";
         result.style.top = 30 + "%";
