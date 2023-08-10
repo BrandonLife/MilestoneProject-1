@@ -25,8 +25,13 @@ export function math() {
     let userAnswer = Number(answerInput.value);
     
     if (userAnswer === correctAnswer) {
-      score++;
+    score++
+    if(score === 1 && userAnswer=== 0 && correctAnswer === 0){
+      score -=1
     }
+    
+   
+  }
     if (operandSymbol === "+") {
       question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 + randomNum2;
@@ -45,6 +50,9 @@ export function math() {
       }
       question = `What is ${randomNum1} ${operandSymbol} ${randomNum2}`;
       correctAnswer = randomNum1 / randomNum2;
+      if(correctAnswer <0){
+        correctAnswer= correctAnswer.toFixed(2)
+      }
     }
 
     questionBox.textContent = question;
@@ -60,18 +68,21 @@ export function math() {
     answerInput.style.zIndex = 2;
     answerInput.style.width = 10 + "%";
 
-    scoreBox.textContent = score;
+    
+    scoreBox.textContent = `Point(s): ${score}`;
     scoreBox.style.position = "absolute";
     scoreBox.style.top = 60 + "%";
-    scoreBox.style.left = 46 + "%";
+    scoreBox.style.left = 43 + "%";
     scoreBox.style.zIndex = 3;
-    scoreBox.style.fontSize = 200 + "px"
+    scoreBox.style.fontSize = 100 + "px"
+     
+    document.body.append(scoreBox)
     document.body.append(answerInput);
     document.body.append(questionBox);
-    document.body.append(scoreBox)
+   
     console.log(score);
     setTimeout(() => {
-      if (score >= 10) {
+      if (score >= 15) {
         result.textContent = "You Win. You are a math wizard.";
         result.style.position = "absolute";
         result.style.top = 30 + "%";

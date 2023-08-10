@@ -8,6 +8,7 @@ import { timer } from "./timer.js";
 console.log("After Import");
 function play() {
   let playButton = document.getElementById("playBtn"); //these individual event listenters are mine
+  let paragrah = document.getElementById('paragraph')
   mouseover();
   mouseout();
   playButton.addEventListener("click", (e) => {
@@ -17,6 +18,7 @@ function play() {
     let title = document.getElementById("titleId");
     title.style.display = "none";
     playButton.style.display = "none";
+    paragrah.style.display='none'
     console.log("Playbutton on click");
     //check if the key is pressed
     });
