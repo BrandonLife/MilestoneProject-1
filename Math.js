@@ -22,6 +22,7 @@ export function math() {
     let randomNum2 = Math.floor(Math.random() * 11);
     let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
     let operandSymbol = operands[randomOperandGeneration];
+  
     let userAnswer = Number(answerInput.value);
     
     if (userAnswer === correctAnswer) {
@@ -68,19 +69,25 @@ export function math() {
     answerInput.style.zIndex = 2;
     answerInput.style.width = 10 + "%";
 
-    
-    scoreBox.textContent = `Point(s): ${score}`;
+   let scoreChange = setInterval(()=>{
+    scoreBox.textContent = `Point(s): ${score}`
     scoreBox.style.position = "absolute";
     scoreBox.style.top = 60 + "%";
     scoreBox.style.left = 43 + "%";
     scoreBox.style.zIndex = 3;
     scoreBox.style.fontSize = 100 + "px"
-     
     document.body.append(scoreBox)
+   },0)
+   
+   if(scoreBox.textContent){
+    clearInterval(scoreChange)
+   }
+     
+   
     document.body.append(answerInput);
     document.body.append(questionBox);
    
-    console.log(score);
+   
     setTimeout(() => {
       if (score >= 15) {
         result.textContent = "You Win. You are a math wizard.";
