@@ -10,4 +10,4 @@ Images came from craftpix.com
 
     Objective:
 
-    The Goal is to answer as many questions correctly before the time ends. if you get 10 or more questions right you win. If not you lose.
+    The Goal is to answer as many questions correctly before the time ends. if you get 15 or more questions right you win. If not you lose.
