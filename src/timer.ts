@@ -1,13 +1,13 @@
-export function timer(duration) {
-  let timerElement = document.createElement("p");
+export function timer(duration: number | string): any {
+  let timerElement: any = document.createElement("p");
 
-  let totalSeconds = duration;
-  let minutes = 0;
-  let seconds = 0;
+  let totalSeconds: any = duration;
+  let minutes: number |string = 0;
+  let seconds: number | string = 0;
 
   let countdownClock = setInterval(() => {
-    minutes = parseInt(totalSeconds / 60);
-    seconds = parseInt(totalSeconds % 60);
+    minutes = Number(totalSeconds / 60);
+    seconds = Number(totalSeconds % 60);
     if (minutes < 10) {
       minutes = "0" + minutes;
     }

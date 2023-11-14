@@ -1,0 +1,16 @@
+{
+  "name": "milestoneproject-1",
+  "version": "1.0.0",
+  "description": "This is a browser game designed from scratch\r     You can play this game at https://blmilestoneproject1.com/ or at https://brandonlife.github.io/MilestoneProject-1/",
+  "main": "Math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}

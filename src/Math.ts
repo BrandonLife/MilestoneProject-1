@@ -1,11 +1,11 @@
-export function math() {
-  let operands = ["+", "-", "/", "x"];
-  let questionBox = document.createElement("div");
-  let answerInput = document.createElement("input");
+export function math(): any {
+  let operands: any = ["+", "-", "/", "x"];
+  let questionBox: any = document.createElement("div");
+  let answerInput: any = document.createElement("input");
   answerInput.setAttribute("id", "userInput");
-  let generateProblemBtn = document.createElement("button");
-  let score = 0;
-  let question;
+  let generateProblemBtn: any = document.createElement("button");
+  let score: any = 0;
+  let question: any
 
   generateProblemBtn.textContent = "Generate Problem/Submit";
   generateProblemBtn.style.position = "absolute";
@@ -13,14 +13,14 @@ export function math() {
   generateProblemBtn.style.left = 46 + "%";
   generateProblemBtn.style.zIndex = 2;
   document.body.append(generateProblemBtn);
-  let result = document.createElement("div");
-  let correctAnswer=0
-  generateProblemBtn.addEventListener("click", (e) => {
+  let result: any = document.createElement("div");
+  let correctAnswer: any=0
+  generateProblemBtn.addEventListener("click", (e: any) => {
     e.preventDefault();
-    let scoreBox = document.createElement('div')
-    let randomNum1 = Math.floor(Math.random() * 11);
-    let randomNum2 = Math.floor(Math.random() * 11);
-    let randomOperandGeneration = Math.floor(Math.random() * 4) + 0;
+    let scoreBox: any = document.createElement('div')
+    let randomNum1: number = Math.floor(Math.random() * 11);
+    let randomNum2: number = Math.floor(Math.random() * 11);
+    let randomOperandGeneration: number = Math.floor(Math.random() * 4) + 0;
     let operandSymbol = operands[randomOperandGeneration];
   
     let userAnswer = Number(answerInput.value);

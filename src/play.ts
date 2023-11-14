@@ -6,16 +6,16 @@ import { mouseover } from "./mouseover.js";
 import { timer } from "./timer.js";
 
 console.log("After Import");
-function play() {
-  let playButton = document.getElementById("playBtn"); //these individual event listenters are mine
-  let paragrah = document.getElementById('paragraph')
+function play(): any {
+  let playButton: any = document.getElementById("playBtn"); //these individual event listenters are mine
+  let paragrah: any = document.getElementById('paragraph')
   mouseover();
   mouseout();
-  playButton.addEventListener("click", (e) => {
+  playButton.addEventListener("click", (e: any) => {
     e.preventDefault();
     math();
     timer(80);
-    let title = document.getElementById("titleId");
+    let title: any = document.getElementById("titleId");
     title.style.display = "none";
     playButton.style.display = "none";
     paragrah.style.display='none'
